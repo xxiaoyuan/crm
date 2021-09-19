@@ -83,7 +83,21 @@
     </update>
 
     <select id="getById" resultType="Activity">
-        select * from tbl_activity where id=#{id}
+        select
+            id,
+            owner,
+            name ,
+            startDate,
+            endDate,
+            cost,
+            description,
+            createTime,
+            createBy,
+            editTime,
+            editBy
+        from
+        tbl_activity
+        where id=#{id}
     </select>
 
     <delete id="delete">
@@ -158,8 +172,6 @@
             description,
             createTime,
             createBy
-
-
         )
         values(
            #{id},

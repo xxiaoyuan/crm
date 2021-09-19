@@ -66,7 +66,29 @@
     </delete>
     
     <select id="getById" resultType="Clue">
-        select * from tbl_clue where id=#{id}
+        select
+            id,
+            fullname,
+            appellation,
+            owner,
+            company,
+            job,
+            email,
+            phone,
+            website,
+            mphone,
+            state,
+            source,
+            createBy,
+            createTime,
+            editBy,
+            editTime,
+            description,
+            contactSummary,
+            nextContactTime,
+            address
+        from tbl_clue
+        where id=#{id}
     </select>
 
     <select id="detail" resultType="Clue">

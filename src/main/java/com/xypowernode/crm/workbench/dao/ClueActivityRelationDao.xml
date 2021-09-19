@@ -27,7 +27,12 @@
     </delete>
 
     <select id="getListByClueId" resultType="ClueActivityRelation">
-        select * from tbl_clue_activity_relation where clueId=#{clueId}
+        select
+            id,
+            clueId,
+            activityId
+        from tbl_clue_activity_relation
+        where clueId=#{clueId}
     </select>
     
     <insert id="bund">

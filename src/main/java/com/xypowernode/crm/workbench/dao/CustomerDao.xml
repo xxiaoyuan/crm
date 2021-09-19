@@ -41,7 +41,22 @@
     </insert>
 
 	<select id="getCustomerByName" resultType="Customer">
-        select * from tbl_customer where name=#{name}
+        select
+            id,
+            owner,
+            name,
+            website,
+            phone,
+            createBy,
+            createTime,
+            editBy,
+            editTime,
+            contactSummary,
+            nextContactTime,
+            description,
+            address
+        from tbl_customer
+        where name=#{name}
     </select>
   	
 </mapper>

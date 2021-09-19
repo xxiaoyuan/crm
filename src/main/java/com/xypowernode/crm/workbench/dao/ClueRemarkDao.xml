@@ -34,7 +34,18 @@
     </update>
 
     <select id="getRemarkListByCid" resultType="ClueRemark">
-         select * from tbl_clue_remark where clueId=#{clueId} order by createTime desc
+         select
+            id,
+            noteContent,
+            createBy,
+            createTime,
+            editBy,
+            editTime,
+            editFlag,
+            clueId
+         from tbl_clue_remark
+         where clueId=#{clueId}
+         order by createTime desc
     </select>
 
     <delete id="deleteByCids">
@@ -60,7 +71,17 @@
     </delete>
 
 	<select id="getListByClueId" resultType="ClueRemark">
-        select * from tbl_clue_remark where clueId=#{clueId}
+        select
+            id,
+            noteContent,
+            createBy,
+            createTime,
+            editBy,
+            editTime,
+            editFlag,
+            clueId
+        from tbl_clue_remark
+        where clueId=#{clueId}
     </select>
   	
 </mapper>
